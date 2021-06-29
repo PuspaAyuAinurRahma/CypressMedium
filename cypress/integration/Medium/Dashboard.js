@@ -4,7 +4,10 @@ context('Actions', () => {
     });
 
     it('Header', () => {
-        cy.get('.ah > .as').should('be.visible');
+        //Cek if the header fixed or not
+        cy.get('.ah > .as')
+            .scrollIntoView()
+            .should('be.visible');
         cy.get('.bs').should('be.visible');
         cy.get('#top-nav-our-story-cta-desktop > .bz > .ca > .bd').contains('Our story')
             .and('have.attr', 'href');
